@@ -1,0 +1,307 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  /***************** Custom Properties *****************/
+
+  /* Colors */
+  --color-primary: #2E6171;
+  --color-primary-m-light: #3B7D91;
+  --color-primary-m-dark: #234B57;
+
+  --color-secondary: #556F7A;
+  --color-secondary-m-light: #6F8D9B;
+  --color-secondary-m-dark: #4B626C;
+
+  --color-tertiary: #798086;
+  --color-tertiary-m-light: #94999E;
+  --color-tertiary-m-dark: #6B7176;
+
+  --color-grey: #555;
+  --color-grey-light: #777;
+  --color-grey-dark: #333;
+
+  --color-white: #fff;
+
+  /* Transition Duration */
+  --transition-duration: 0.3s;
+
+  /* Section Title Font Size */
+  --font-size-title: calc(1.5rem + 1.5vw);
+  --default-font-size: 1.6rem;
+
+  /* Section Padding */
+  --padding-section: 8vh 3vw;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.1rem;
+  color: var(--color-grey-dark);
+}
+
+li {
+  list-style: none;
+  margin-bottom: 4rem;
+}
+
+.heading-primary {
+  font-size: 6rem;
+  color: var(--color-white);
+}
+
+.heading-secondary {
+  font-size: 4rem;
+}
+
+.sub-heading {
+  font-size: 5.5rem;
+  color: var(--color-tertiary);
+}
+
+.paragraph {
+  font-size: calc(var(--default-font-size) + 0.8vw);
+  color: var(--color-white);
+}
+
+.shadow {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 7.5px 10px rgba(0, 0, 0, 0.06), 0 8.3px 12.9px rgba(0, 0, 0, 0.072), 0 10.8px 15.4px rgba(0, 0, 0, 0.086), 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  font-size: calc(var(--default-font-size) + 0.2vw);
+  color: var(--color-white);
+  border-radius: 5rem;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  margin-top: 3rem;
+}
+
+.btn:hover,
+.btn:active {
+  transform: scale(0.8);
+}
+
+.btn--main {
+  background-color: var(--color-tertiary-m-dark);
+}
+
+.container {
+  /* max-width: 150rem;
+  margin: 0 auto; */
+  display: grid;
+  grid-template-columns:
+    [container-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 15rem) [col-end])
+    [center-end] 1fr [container-end];
+  grid-template-rows: repeat(8, min-content);
+}
+
+.header {
+  grid-column: container-start / container-end;
+  height: 50vh;
+  background-color: var(--color-primary);
+}
+
+.header__main-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.header__main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+}
+
+.header__main-nav input[type="checkbox"] {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  height: 5rem;
+  width: 5rem;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Hamburger */
+.header__main-nav--hamburger {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  height: 5rem;
+  width: 5rem;
+  padding: 1rem;
+  background-color: var(--color-tertiary-m-dark);
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+
+  animation: main-nav 2s;
+}
+
+@keyframes main-nav {
+  0% {
+    transform: translateX(150rem) rotate(1800deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+/* Hamburger Lines */
+.header__main-nav--hamburger > div {
+  position: relative;
+  height: 0.3rem;
+  width: 100%;
+  background-color: var(--color-white);
+
+  display: grid;
+  place-items: center;
+  transition: all var(--transition-duration) ease-in-out;
+}
+
+/* hamburger Top and Bottom Lines */
+.header__main-nav--hamburger > div::before,
+.header__main-nav--hamburger > div::after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  width: 60%;
+  height: inherit;
+  background-color: inherit;
+  z-index: 2;
+}
+
+.header__main-nav--hamburger > div::before {
+  left: 0;
+}
+
+.header__main-nav--hamburger > div::after {
+  top: 1rem;
+  right: 0;
+}
+
+/* Rotating the Menu */
+.header__main-nav input[type="checkbox"]:checked + .header__main-nav--hamburger > div {
+  transform: rotate(135deg);
+}
+
+.header__main-nav input[type="checkbox"]:checked + .header__main-nav--hamburger > div::before {
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform: rotate(270deg);
+}
+
+.header__main-nav input[type="checkbox"]:checked + .header__main-nav--hamburger > div::after {
+  opacity: 0;
+}
+
+.header__main-nav input[type="checkbox"]:checked:hover + .header__main-nav--hamburger > div {
+  transform: rotate(405deg);
+}
+
+/* Links Menu */
+.header__main-nav--menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  overflow: hidden;
+
+  display: grid;
+  place-items: center;
+}
+
+.header__main-nav--menu > div {
+  background-color: var(--color-secondary-m-dark);
+  height: 200%;
+  width: 200%;
+
+  display: grid;
+  place-items: center;
+
+  transform: scaleX(0);
+  transition: all 0.5s ease-in-out;
+}
+
+.header__main-nav--menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Displaying the Menu when the checkbox is checked */
+.header__main-nav input[type="checkbox"]:checked ~ .header__main-nav--menu {
+  visibility: visible;
+}
+
+.header__main-nav input[type="checkbox"]:checked ~ .header__main-nav--menu > div {
+  transform: scaleX(1);
+  /* transition-duration: 0.5s; */
+}
+
+.header__main-nav input[type="checkbox"]:checked ~ .header__main-nav--menu > div > div {
+  opacity: 1;
+}
+
+.header__main-nav--menu ul li a:link,
+.header__main-nav--menu ul li a:visited {
+  z-index: 5;
+  font-size: calc(1.5rem + 0.5vw);
+  position: relative;
+  text-decoration: none;
+  color: var(--color-white);
+  padding: 1rem 2rem;
+}
+
+.header__main-nav--menu ul li a:link::before,
+.header__main-nav--menu ul li a:visited::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform: scaleY(0);
+  background-color: var(--color-primary-m-dark);
+  transition: transform var(--transition-duration) ease-in-out;
+}
+
+.header__main-nav--menu ul li a:hover::before,
+.header__main-nav--menu ul li a:active::before {
+  transform: scaleY(1);
+}
+
+#about {
+  grid-column: center-start / center-end;
+  margin-top: 5rem;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

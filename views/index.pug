@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .container
+    header.header
+      nav.header__main-nav
+          input(type='checkbox')
+          .header__main-nav--hamburger
+            div
+          .header__main-nav--menu
+            div
+              div
+                ul
+                  li
+                    a.nav-link(href='#') Home
+                  li
+                    a.nav-link(href='#') About
+                  li
+                    a.nav-link(href='#') Blog
+                  li
+                    a.nav-link(href='#') Contact
+      .header__main-text
+        h1.heading-primary Darrell.
+          span.sub-heading
+        p.paragraph Front End Developer / Web Developer
+        a.btn.btn--main.shadow(href="#about") View More
+      
+    section#about 
+      h2.heading-secondary Hello, This site is currently under construction... 
