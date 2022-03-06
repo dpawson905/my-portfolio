@@ -27,6 +27,8 @@
   --color-grey-light: #777;
   --color-grey-dark: #333;
 
+  --color-goddog: #60dd06;
+
   --color-white: #fff;
 
   /* Transition Duration */
@@ -64,7 +66,7 @@ li {
 
 .sub-heading {
   font-size: 5.5rem;
-  color: var(--color-tertiary);
+  color: var(--color-goddog);
 }
 
 .paragraph {
@@ -92,7 +94,7 @@ li {
 }
 
 .btn--main {
-  background-color: var(--color-tertiary-m-dark);
+  background-color: var(--color-goddog);
 }
 
 .container {
@@ -146,7 +148,7 @@ li {
   height: 5rem;
   width: 5rem;
   padding: 1rem;
-  background-color: var(--color-tertiary-m-dark);
+  background-color: var(--color-goddog);
   z-index: 2;
 
   display: grid;
@@ -223,7 +225,7 @@ li {
 }
 
 .header__main-nav--menu > div {
-  background-color: var(--color-secondary-m-dark);
+  background-color: var(--color-primary);
   height: 200%;
   width: 200%;
 
@@ -276,7 +278,7 @@ li {
   width: 100%;
   z-index: -1;
   transform: scaleY(0);
-  background-color: var(--color-primary-m-dark);
+  background-color: var(--color-goddog);
   transition: transform var(--transition-duration) ease-in-out;
 }
 
