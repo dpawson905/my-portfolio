@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "start": "nodemon app.js",
-    "dev-win": "set DEBUG=portfolio:* && nodemon app.js"
+    "dev-win": "set DEBUG=portfolio:* && nodemon app.js",
+    "dev": "DEBUG=portfolio:* nodemon app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.6",
-    "debug": "~4.3.3",
-    "express": "~4.17.2",
+    "debug": "~4.3.4",
+    "express": "~4.17.3",
     "http-errors": "~2.0.0",
     "morgan": "~1.10.0",
     "pug": "3.0.2"

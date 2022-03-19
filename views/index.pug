@@ -1,29 +1,50 @@
 extends layout
 
 block content
-  .container
-    header.header
-      nav.header__main-nav
-          input(type='checkbox')
-          .header__main-nav--hamburger
-            div
-          .header__main-nav--menu
-            div
-              div
-                ul
-                  li
-                    a.nav-link(href='#') Home
-                  li
-                    a.nav-link(href='#') About
-                  li
-                    a.nav-link(href='#') Blog
-                  li
-                    a.nav-link(href='#') Contact
-      .header__main-text
-        h1.heading-primary Darrell.
-          span.sub-heading
-        p.paragraph Front End Developer / Web Developer
-        a.btn.btn--main.shadow(href="#about") View More
-      
-    section#about 
-      h2.heading-secondary Hello, This site is currently under construction... 
+  header#header
+    nav(class="header__main-nav")
+      input(type="checkbox")
+      div(class="header__main-nav--hamburger")
+        div
+      div(class="header__main-nav--menu")
+        div
+          div
+            ul
+              li
+                a.nav-link(href="#") Home
+              li
+                a.nav-link(href="#") Villas
+              li
+                a.nav-link(href="#") About
+              li
+                a.nav-link(href="#") Contact
+    .header__main-text
+      h1.heading-primary Darrell.
+        span.sub-heading
+      p.paragraph.color-white Front End Developer / Web Developer
+      a.btn.btn--main.shadow(href="#about") View More 
+  section#about 
+    .about--img-box
+      img.about--img.shadow(src="https://via.placeholder.com/500x300" alt="user profile image")
+    .about--text 
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque pariatur nulla dignissimos eos rem distinctio in atque quia, inventore maxime quam adipisci temporibus odio unde doloremque impedit incidunt suscipit iure aliquam deserunt libero. Quisquam eaque eius iure eveniet officiis ab.
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque pariatur nulla dignissimos eos rem distinctio in atque quia, inventore maxime quam adipisci temporibus odio unde doloremque impedit incidunt suscipit iure aliquam deserunt libero. Quisquam eaque eius iure eveniet officiis ab.
+  section#about-text-side.shadow
+    div(class="about-text__content")
+      h2(class="about-text__content--title") About
+  section#work-text-side.shadow
+    div(class="work-text__content")
+      h2(class="work-text__content--title") Work
+  section#work
+    .work--text
+      h1.text-center.heading-secondary App 1
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque pariatur nulla dignissimos eos rem distinctio in atque quia, inventore maxime quam adipisci temporibus odio unde doloremque impedit incidunt suscipit iure aliquam deserunt libero. Quisquam eaque eius iure eveniet officiis ab.
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque pariatur nulla dignissimos eos rem distinctio in atque quia, inventore maxime quam adipisci temporibus odio unde doloremque impedit incidunt suscipit iure aliquam deserunt libero. Quisquam eaque eius iure eveniet officiis ab.
+    .work--img-box
+      img.work--img.shadow(src="https://via.placeholder.com/500x300" alt="user profile image")
+    .work--text
+      h1.text-center.heading-secondary App 2
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque pariatur nulla dignissimos eos rem distinctio in atque quia, inventore maxime quam adipisci temporibus odio unde doloremque impedit incidunt suscipit iure aliquam deserunt libero. Quisquam eaque eius iure eveniet officiis ab.
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque pariatur nulla dignissimos eos rem distinctio in atque quia, inventore maxime quam adipisci temporibus odio unde doloremque impedit incidunt suscipit iure aliquam deserunt libero. Quisquam eaque eius iure eveniet officiis ab.
+    .work--img-box
+      img.work--img.shadow(src="https://via.placeholder.com/500x300" alt="user profile image")
