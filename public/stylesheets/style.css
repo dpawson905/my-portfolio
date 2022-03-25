@@ -109,6 +109,15 @@ li {
   background-color: var(--color-goddog);
 }
 
+.next-link {
+  text-decoration: none;
+  font-size: 2rem;
+  letter-spacing: .5rem;
+  color: var(--color-goddog);
+  float: right;
+  margin-right: .5rem;
+}
+
 .container {
   display: grid;
   grid-template-columns:
@@ -369,7 +378,7 @@ section#work-text-side  {
 section#about {
   grid-column: center-start / col-end 9;
   padding: var(--padding-section);
-
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -382,6 +391,21 @@ section#about {
   width: 100%;
   object-fit: center;
   border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.about--img:hover,
+.about--img:active {
+  transform: scale(1.02) rotate(6deg);
+
+}
+
+.about--text {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .about--text p{
@@ -395,7 +419,7 @@ section#about {
 section#work {
   grid-column: col-start 2 / center-end;
   padding: var(--padding-section);
-
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
