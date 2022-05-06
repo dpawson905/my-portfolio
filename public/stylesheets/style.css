@@ -46,8 +46,8 @@
 body {
   font-family: 'Quicksand', sans-serif;
   line-height: 1.7;
-  letter-spacing: 0.1rem;
-  color: var(--color-grey-dark);
+  letter-spacing: 0.3rem;
+  color: var(--color-grey);
 }
 
 li {
@@ -94,7 +94,7 @@ li {
 }
 
 .btn--main {
-  background-color: var(--color-goddog);
+  background-color: var(--color-tertiary);
 }
 
 .container {
@@ -278,7 +278,7 @@ li {
   width: 100%;
   z-index: -1;
   transform: scaleY(0);
-  background-color: var(--color-goddog);
+  background-color: var(--color-secondary);
   transition: transform var(--transition-duration) ease-in-out;
 }
 
